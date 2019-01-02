@@ -40,7 +40,10 @@ public class CustomRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        info.addRole("admin");
+        info.addRole("test");
+        info.addStringPermission("perm1");
+        //info.addStringPermission("test-perm:*:write");
+        info.addStringPermission("test-perm:1:read");
         return info;
     }
 
