@@ -1,0 +1,8 @@
+shiro:
+  securityMap:
+    [/login]: anon
+    [/register]: anon
+    [/admin/login]: anon
+    [/admin/**]: jwt,roles[admin]
+    [/ping]: jwt, roles[test]
+    [/**]: jwt
