@@ -1,37 +1,25 @@
 package org.xemi.poc.security.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Data
 @NoArgsConstructor
 @Entity
-@Table(name = "users")
+@Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = {"login_name"})})
 public class User {
 
-    @Getter
-    @Setter
     @Id
-    @SequenceGenerator(name = "MYSQL_GENERATOR", sequenceName = "zfc_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "MYSQL_GENERATOR")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
-    @Setter
-    @Column(unique = true, nullable = false)
+    @Column(name = "login_name", nullable = false,columnDefinition = "VARCHAR(32)")
     private String loginName;
 
-    @Getter
-    @Setter
     @Column(nullable = false)
     private String password;
 }
