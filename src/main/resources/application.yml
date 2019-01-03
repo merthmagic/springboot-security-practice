@@ -4,5 +4,6 @@ shiro:
     [/register]: anon
     [/admin/login]: anon
     [/admin/**]: jwt,roles[admin]
-    [/ping]: jwt, roles[test]
+    [/ping]: jwt
+    [/test/*]: jwt, ownerOf
     [/**]: jwt
