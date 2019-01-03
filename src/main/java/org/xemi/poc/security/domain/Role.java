@@ -15,30 +15,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Data
 @NoArgsConstructor
 @Entity
 @Table(name = "roles")
 public class Role {
 
-    @Getter
-    @Setter
     @Id
-    @SequenceGenerator(name = "MYSQL_GENERATOR", sequenceName = "zfc_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "MYSQL_GENERATOR")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long roleId;
 
-    @Getter
-    @Setter
     @Column(nullable = false)
     private String name;
 
-    @Getter
-    @Setter
     @Column(nullable = false)
     private String notes;
 
-    @Getter
-    @Setter
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private RoleType roleType;

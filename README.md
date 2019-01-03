@@ -4,10 +4,10 @@
 
 ## 主要工作
 
-- 自定义Realm来获取用户信息，权限信息
+- 自定义`Realm`来获取用户信息，权限信息
 - 自定义拦截器
-- Shiro在SpringBoot中的配置
-- 集成jBcrypt
+- `Shiro`在`SpringBoot`中的配置
+- 集成`jBcrypt`
 
 ## 参考链接
 RBAC理论部分
