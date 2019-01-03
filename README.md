@@ -18,14 +18,14 @@ https://github.com/antoniomaria/shiro-jpa
 
 集成参考
 https://blog.csdn.net/weixin_38132621/article/details/80216075
+
 https://github.com/HowieYuan/Shiro-SpringBoot
 
-hibernate版本引起的问题(发现建了一张sequence表，并且mysql自增字段配置失效)
+JPA Hibernate版本引起的问题(发现建了一张sequence表，并且mysql自增字段配置失效)
 https://stackoverflow.com/questions/41461283/hibernate-sequence-table-is-generated
-hibernate
 
 一些踩坑
 https://segmentfault.com/a/1190000013630601
 
-集成bcrypt
+集成jBcrypt
 https://blog.csdn.net/dora_310/article/details/81107107
