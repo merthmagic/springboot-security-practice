@@ -21,6 +21,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.xemi.poc.security.security.CustomRealm;
 import org.xemi.poc.security.security.JwtAuthcFilter;
+import org.xemi.poc.security.security.OwnerOfFilter;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -97,6 +98,7 @@ public class ShiroConfig {
         Map<String, Filter> filters = shiroFilterFactoryBean.getFilters();
 
         filters.put("jwt", new JwtAuthcFilter());
+        filters.put("ownerOf",new OwnerOfFilter());
 
         //这里定义ShiroFilterFactoryBean后，似乎使properties文件中的shiro.loginUrl配置失效了
         //所以增加了这个配置
