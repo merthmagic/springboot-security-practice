@@ -39,6 +39,7 @@ public class CustomRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
+        //这里获取用户的角色权限信息
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         info.addRole("test");
         info.addStringPermission("perm1");
@@ -50,9 +51,9 @@ public class CustomRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token)
             throws AuthenticationException {
+        //这里获取用户信息，不进行密码校验，密码校验在CredentialsMatcher中进行
         if (token instanceof UsernamePasswordToken) {
             log.debug("登录操作：UsernamePasswordToken");
-
 
             UsernamePasswordToken upToken = (UsernamePasswordToken) token;
 

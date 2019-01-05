@@ -18,4 +18,11 @@ public interface PermissionRepository extends CrudRepository<Permission, Long> {
             "on rp.permissionId = p.permissionId " +
             "where u.id = :userId")
     List<Permission> fetchPermissionByUserId(@Param(value = "userId") Long userId);
+
+
+    @Query(value="select p from RolePermissionRelationship rp " +
+            "join Permission p " +
+            "on rp.permissionId = p.permissionId " +
+            "where rp.roleId=: roleId")
+    List<Permission> fetchPermissionByRoleId(@Param(value="roleId") Long roleId);
 }
